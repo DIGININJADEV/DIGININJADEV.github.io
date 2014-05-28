@@ -627,14 +627,28 @@ section {
 	width:100%;
 	overflow:hidden;	
 }
+#portfolioFilters a{
+  font-size: 1.2em;
+  color: rgba(223,16,16,1);
+  font-weight:  300;
+}
+#portfolioFilters a:hover{
+  text-decoration: underline;
+}
+.portfolioFiltterActive{
+  font-weight: 500 !important;
+  text-decoration: underline;
+}
+#portfolioFilters a:active{
+}
 .portfolioMargin{
 	padding: 0 20px 30px 0;	
 }
 #panel {
 		position: relative;
 		float: left;
-		width: 460px;
-		height: 380px;
+		width: 210px; /* 460 */
+		height: 190px; /* 380 */
 		/* -webkit-perspective: 600px;
 		-moz-perspective: 600px; */
 }
@@ -652,8 +666,8 @@ section {
 #panel .front {
 		position: absolute;
 		z-index: 900;
-		width: 460px;
-		height: 380px;
+		width: 210px; /* 460 */
+		height: 190px; /*  380 */
 		text-align: center;
 		-webkit-transform: rotateX(0deg) rotateY(0deg);
 		-webkit-transform-style: preserve-3d;
@@ -669,7 +683,7 @@ section {
 		transition: all .4s ease-in-out;
 		border: 1px ridge rgba(0,0,0,.5);
 		box-shadow: 2px 1px 4px rgba(0,0,0,.7);
-		border-radius: 15px;
+		border-radius: 5px;
 }
 #panel.flip .front {
 		z-index: 900;
@@ -679,8 +693,8 @@ section {
 #panel .back {
 		position: absolute;
 		z-index: 800;
-		width: 460px;
-		height: 380px;
+		width: 210px; /* 460 */
+		height: 190px; /* 380 */
 		-webkit-transform: rotateY(-180deg);
 		-webkit-transform-style: preserve-3d;
 		-webkit-backface-visibility: hidden;
@@ -696,7 +710,7 @@ section {
 		transition: all .4s ease-in-out;
 		border: 2px solid rgba(0,0,0,.5);
 		box-shadow: 2px 1px 4px rgba(0,0,0,.5);
-		border-radius: 15px;
+		border-radius: 5px;
 }
 #panel .back-content{
 	position: absolute;

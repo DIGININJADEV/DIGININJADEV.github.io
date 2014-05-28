@@ -532,6 +532,55 @@ function buildPortfolio(){
 	portfolio = [],
 	portfolioCycles = 0,
 	stopCycle = false;
+  
+  // Build Portfolio Filters
+  
+  $('#portfolioFilters a').each(function(index){
+    $(this).on({
+		click: function(){
+			if($(this).attr('data-id').length){
+       $activeTag = $(this).attr('data-id');
+       $('#portfolioFilters a').each(function(){
+         $(this).removeClass('portfolioFilterActive');
+       });
+        
+       $(this).addClass('portfolioFilterActive');
+       
+       $(".portfolioFilter #panel").each(function(index) {
+          $currentTag = $(this).attr('data-id');
+          if($activeTag === '*'){
+            $(this).parent().animate({
+                opacity: 1,
+                left: "-=50",
+                height: "show"
+              }, 500, function() {
+                // Animation complete.
+              });  
+          }else{
+            if($currentTag !== $activeTag){
+              $(this).parent().animate({
+                opacity: 0,
+                left: "+=50",
+                height: "toggle"
+              }, 500, function() {
+                // Animation complete.
+              });  
+            }else{
+              $(this).parent().animate({
+                opacity: 1,
+                left: "-=50",
+                height: "show"
+              }, 500, function() {
+                // Animation complete.
+              });  
+            } 
+          }
+       })
+			}
+			return false;
+		}		
+	 });
+  });
 
 	$('.hover').hover(function(){
 			$(this).addClass('flip');
@@ -547,15 +596,18 @@ function buildPortfolio(){
 	
 	$left = 0;
 	
-	$(".portfolio #panel").each(function(index) {
+	$(".portfolioFilter #panel").each(function(index) {
     var portfolioItem = {};
 		
+    $tag      = $(this).attr('data-id');
+    console.log('#:'+$tag);
 		$bgImg    = $(this).find(">:first-child").css("background-image");
-		$bgImg = $bgImg.replace('small','big');
+		$bgImg    = $bgImg.replace('small','big');
 		$readMore = $(this).find('.read-more a');
 		$zoomIn   = $(this).find('.zoom-in a').attr('href',index);
 		
 		portfolioItem.id = index,
+    portfolioItem.tag = $tag,
 		portfolioItem.bgImg = $bgImg;
 		portfolioItem.left = $left;
 		$left += 480;
@@ -567,7 +619,7 @@ function buildPortfolio(){
 			$portfolioItemLink = '<a href="#">'+(index + 1)+'</a>';
 		}
 		
-		$("#portfolioNav").html($portfolioNavHTML + $portfolioItemLink);
+		//$("#portfolioNav").html($portfolioNavHTML + $portfolioItemLink);
 		
 			
 		$zoomIn.click(function(){
@@ -599,6 +651,8 @@ function buildPortfolio(){
 			return false		
 		});
   });
+  
+  console.log(portfolio);
 	
 	$("#portfolioNav a").each(function(index) {
     $(this).click(function(){
