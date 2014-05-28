@@ -553,7 +553,7 @@ function buildPortfolio(){
                 opacity: 1,
                 left: "-=50",
                 height: "show"
-              }, 500, function() {
+              }, 1500, function() {
                 // Animation complete.
               });  
           }else{
@@ -562,7 +562,7 @@ function buildPortfolio(){
                 opacity: 0,
                 left: "+=50",
                 height: "toggle"
-              }, 500, function() {
+              }, 1500, function() {
                 // Animation complete.
               });  
             }else{
@@ -570,7 +570,7 @@ function buildPortfolio(){
                 opacity: 1,
                 left: "-=50",
                 height: "show"
-              }, 500, function() {
+              }, 1500, function() {
                 // Animation complete.
               });  
             } 
