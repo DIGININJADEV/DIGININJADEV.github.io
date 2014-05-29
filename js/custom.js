@@ -545,35 +545,52 @@ function buildPortfolio(){
        });
         
        $(this).addClass('portfolioFilterActive');
-       
+       $delayNot = 400;
+       $delayIs  = 400;
        $(".portfolioFilter #panel").each(function(index) {
           $currentTag = $(this).attr('data-id');
           if($activeTag === '*'){
+            $(this).parent().fadeIn(1000);
+            /*
             $(this).parent().animate({
                 opacity: 1,
-                left: "-=50",
+                left: "+=50",
                 height: "show"
-              }, 1500, function() {
+              }, 1000, function() {
                 // Animation complete.
-              });  
+              });
+            */
           }else{
             if($currentTag !== $activeTag){
-              $(this).parent().animate({
+              setTimeout(
+              $(this).parent().fadeOut(500)
+              ,1000); 
+              /*
+              $(this).parent().delay($delayNot).animate({
                 opacity: 0,
                 left: "+=50",
-                height: "toggle"
-              }, 1500, function() {
+                height: "hide"
+              }, 1000, function() {
                 // Animation complete.
-              });  
-            }else{
-              $(this).parent().animate({
+              });
+              $delayNot += 200;
+              */
+            }
+            if($currentTag === $activeTag){
+              setTimeout(
+              $(this).parent().fadeIn(1000)
+              ,1000); 
+              /*
+              $(this).parent().delay($delayIs).animate({
                 opacity: 1,
-                left: "-=50",
+                left: "+=50",
                 height: "show"
-              }, 1500, function() {
+              }, 1000, function() {
                 // Animation complete.
-              });  
-            } 
+              });
+              $delayIs += 200;
+              */
+            }
           }
        })
 			}

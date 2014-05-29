@@ -627,13 +627,38 @@ section {
 	width:100%;
 	overflow:hidden;	
 }
+#portfolioFilters{
+  position: relative;
+  height: 50px;
+  width: auto;
+  top: 15px;
+}
+#portfolioFilters .filterTags{
+  position: relative;
+  float: right;
+  top: 22px;
+  margin-right: 10px;
+}
+#portfolioFilters h2{
+  display: inline-block;
+  float: left;
+  margin-right: 30px;
+}
 #portfolioFilters a{
-  font-size: 1.2em;
-  color: rgba(223,16,16,1);
-  font-weight:  300;
+  top: 25px;
+  padding: 2px;
+  margin: 5px 0 5px 0;
+  font-size: .8em;
+  /* 223,16,16 */
+  color: rgba(0,0,0,.3);
+  font-weight:  bold;
+  text-transform: uppercase;
 }
 #portfolioFilters a:hover{
   text-decoration: underline;
+  font-size: .8em;
+  font-weight: bold;
+  color: rgba(223,16,16,.9);
 }
 .portfolioFiltterActive{
   font-weight: 500 !important;
@@ -641,14 +666,20 @@ section {
 }
 #portfolioFilters a:active{
 }
+#portfolioFilters span{
+  font-size:  .8em;
+  font-weight: bold;
+  color: rgba(0,0,0,.3);
+  margin: 3px;
+}
 .portfolioMargin{
-	padding: 0 20px 30px 0;	
+	padding: 0 30px 10px 0;	
 }
 #panel {
 		position: relative;
 		float: left;
-		width: 210px; /* 460 */
-		height: 190px; /* 380 */
+		width: 230px; /* 460 */
+		height: 230px; /* 380 */
 		/* -webkit-perspective: 600px;
 		-moz-perspective: 600px; */
 }
@@ -666,8 +697,8 @@ section {
 #panel .front {
 		position: absolute;
 		z-index: 900;
-		width: 210px; /* 460 */
-		height: 190px; /*  380 */
+		width: 230px; /* 460 */
+		height: 230px; /*  380 */
 		text-align: center;
 		-webkit-transform: rotateX(0deg) rotateY(0deg);
 		-webkit-transform-style: preserve-3d;
@@ -693,8 +724,8 @@ section {
 #panel .back {
 		position: absolute;
 		z-index: 800;
-		width: 210px; /* 460 */
-		height: 190px; /* 380 */
+		width: 230px; /* 460 */
+		height: 230px; /* 380 */
 		-webkit-transform: rotateY(-180deg);
 		-webkit-transform-style: preserve-3d;
 		-webkit-backface-visibility: hidden;
