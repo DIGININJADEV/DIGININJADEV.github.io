@@ -545,51 +545,21 @@ function buildPortfolio(){
        });
         
        $(this).addClass('portfolioFilterActive');
+       $delayAll = 400;
        $delayNot = 400;
        $delayIs  = 400;
        $(".portfolioFilter #panel").each(function(index) {
           $currentTag = $(this).attr('data-id');
           if($activeTag === '*'){
-            $(this).parent().fadeIn(1000);
-            /*
-            $(this).parent().animate({
-                opacity: 1,
-                left: "+=50",
-                height: "show"
-              }, 1000, function() {
-                // Animation complete.
-              });
-            */
+              $(this).parent().delay($delayAll).prependTo('.portfolioFilter').fadeIn(500);
+              $delayAll += 200;
           }else{
-            if($currentTag !== $activeTag){
-              setTimeout(
-              $(this).parent().fadeOut(500)
-              ,1000); 
-              /*
-              $(this).parent().delay($delayNot).animate({
-                opacity: 0,
-                left: "+=50",
-                height: "hide"
-              }, 1000, function() {
-                // Animation complete.
-              });
-              $delayNot += 200;
-              */
-            }
             if($currentTag === $activeTag){
-              setTimeout(
-              $(this).parent().fadeIn(1000)
-              ,1000); 
-              /*
-              $(this).parent().delay($delayIs).animate({
-                opacity: 1,
-                left: "+=50",
-                height: "show"
-              }, 1000, function() {
-                // Animation complete.
-              });
+              $(this).parent().delay($delayIs).prependTo('.portfolioFilter').fadeIn(500);
               $delayIs += 200;
-              */
+            }
+            if($currentTag !== $activeTag){
+              $(this).parent().fadeOut(500);
             }
           }
        })

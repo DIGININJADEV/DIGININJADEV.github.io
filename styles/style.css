@@ -660,9 +660,10 @@ section {
   font-weight: bold;
   color: rgba(223,16,16,.9);
 }
-.portfolioFiltterActive{
-  font-weight: 500 !important;
-  text-decoration: underline;
+.portfolioFilterActive{
+  font-weight: bold;
+  color: rgba(223,16,16,.9) !important;
+  text-decoration: underline !important;
 }
 #portfolioFilters a:active{
 }
@@ -750,6 +751,8 @@ section {
 	padding-top: 25px;
 }
 #panel .back-content h3{
+  font-size: 1.5em;
+  line-height: 1.2em;
 	margin-bottom: 20px;
 }
 #panel .back-content h5{
@@ -757,6 +760,9 @@ section {
 	font-size: 1em;
 	font-weight:bold;
 	padding-bottom: 10px;
+}
+#panel .back-content p{
+	line-height: 1.4em;
 }
 #panel .back ul{
 	position: absolute;
