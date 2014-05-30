@@ -551,15 +551,16 @@ function buildPortfolio(){
        $(".portfolioFilter #panel").each(function(index) {
           $currentTag = $(this).attr('data-id');
           if($activeTag === '*'){
-              $(this).parent().delay($delayAll).prependTo('.portfolioFilter').fadeIn(500);
+              $(this).parent().prependTo('.portfolioFilter').delay($delayAll).fadeIn(1500);
               $delayAll += 200;
           }else{
             if($currentTag === $activeTag){
-              $(this).parent().delay($delayIs).prependTo('.portfolioFilter').fadeIn(500);
+              $(this).parent().prependTo('.portfolioFilter').delay($delayIs).fadeIn(1500);
               $delayIs += 200;
             }
             if($currentTag !== $activeTag){
-              $(this).parent().fadeOut(500);
+              $(this).parent().fadeOut(1000);
+              //$delayNot += 200;
             }
           }
        })
