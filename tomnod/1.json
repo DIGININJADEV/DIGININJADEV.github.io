@@ -1,0 +1,14 @@
+{
+  "uid": "58908#1",
+  "recipient": {
+    "type": "email",
+    "hashed": false,
+    "identity": "keiichi.lindley@gmail.com"
+  },
+  "issuedOn": "2014-07-21T21:21:52.061Z",
+  "badge": "http://badgelab.herokuapp.com/58908/class.json",
+  "verify": {
+    "type": "hosted",
+    "url": "http://badgelab.herokuapp.com/58908/1.json"
+  }
+}
