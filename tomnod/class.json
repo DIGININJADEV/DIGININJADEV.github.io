@@ -1,7 +1,7 @@
 {
   "name": "DIGININJA DEV TEST BADGE",
   "description": "~~ This is a dummy badge ~~",
-  "image": "http://badgelab.herokuapp.com/58908/badge.png",
-  "criteria": "http://badgelab.herokuapp.com/58908/criteria.txt",
-  "issuer": "http://badgelab.herokuapp.com/58908/issuer.json"
+  "image": "http://digininjadev.github.io/tomnod/spacecat.png",
+  "criteria": "http://digininjadev.github.io/tomnod/criteria.txt",
+  "issuer": "http://digininjadev.github.io/tomnod/issuer.json"
 }
